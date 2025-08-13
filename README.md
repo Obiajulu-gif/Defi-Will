@@ -23,7 +23,7 @@ DeFi Will is an AI-powered inheritance and deadman switch platform for DeFi asse
 
 ### Visual Architecture Diagram
 
-\`\`\`mermaid
+```mermaid
 graph TB
     subgraph "Frontend Layer"
         UI[Next.js UI]
@@ -82,7 +82,7 @@ graph TB
     style ZKV fill:#f59e0b
     style DR fill:#06b6d4
     style CCB fill:#84cc16
-\`\`\`
+```
 
 ### System Design Overview
 
@@ -143,13 +143,13 @@ DeFi Will implements a sophisticated multi-layered architecture designed for sec
 
 #### 3. **Data Flow Architecture**
 
-\`\`\`
+```
 User Action → Frontend Validation → Web3 Provider → Smart Contract → Blockchain
      ↓                                                                    ↓
 Event Emission ← State Update ← Transaction Receipt ← Block Confirmation
      ↓
 UI Update → Notification System → Beneficiary Alerts
-\`\`\`
+```
 
 #### 4. **Security Architecture**
 
@@ -194,7 +194,7 @@ UI Update → Notification System → Beneficiary Alerts
 
 ## 📁 Project Structure
 
-\`\`\`
+```
 ├── app/
 │   ├── page.tsx                 # Landing page with hero, features, testimonials
 │   ├── dashboard/               # User dashboard with portfolio, wills, activity
@@ -223,7 +223,7 @@ UI Update → Notification System → Beneficiary Alerts
 └── lib/
     ├── web3-config.ts          # Avalanche network configuration
     └── utils.ts                # Utility functions and helpers
-\`\`\`
+```
 
 ## 🎯 Core Functionality
 
@@ -258,20 +258,20 @@ UI Update → Notification System → Beneficiary Alerts
 ## 🔗 Smart Contract Interactions
 
 ### Contract Deployment Flow
-\`\`\`
+```
 WillFactory.createWill() → InheritanceVault.initialize() → ActivityMonitor.setup()
                                     ↓
 MultiSigController.configure() → ZKVerifier.setupProofs() → LegalComplianceEngine.validate()
-\`\`\`
+```
 
 ### Inheritance Trigger Flow
-\`\`\`
+```
 ActivityMonitor.checkActivity() → 30 days inactive → triggerInheritance()
                                         ↓
 LegalComplianceEngine.validate() → MultiSigController.approve() → InheritanceVault.distribute()
                                         ↓
 CrossChainBridge.transfer() → Beneficiaries receive assets → Event emissions
-\`\`\`
+```
 
 ## 🚀 Getting Started
 
@@ -284,23 +284,23 @@ CrossChainBridge.transfer() → Beneficiaries receive assets → Event emissions
 ### Installation
 
 1. Clone the repository:
-\`\`\`bash
+```bash
 git clone https://github.com/your-username/defi-will.git
 cd defi-will
-\`\`\`
+```
 
 2. Install dependencies:
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 3. Set up environment variables:
-\`\`\`bash
+```bash
 cp .env.example .env.local
-\`\`\`
+```
 
 Add your environment variables:
-\`\`\`env
+```env
 # Smart Contract Addresses
 NEXT_PUBLIC_WILL_FACTORY_ADDRESS=your_factory_contract_address
 NEXT_PUBLIC_DEFI_WILL_TEMPLATE_ADDRESS=your_template_address
@@ -311,19 +311,19 @@ NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_walletconnect_project_id
 # Deployment Keys (for contract deployment)
 PRIVATE_KEY=your_deployment_private_key
 SNOWTRACE_API_KEY=your_snowtrace_api_key
-\`\`\`
+```
 
 4. Deploy smart contracts (optional):
-\`\`\`bash
+```bash
 cd contracts
 npm install
 npx hardhat run scripts/deploy.js --network fuji
-\`\`\`
+```
 
 5. Run the development server:
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
